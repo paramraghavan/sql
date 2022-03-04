@@ -12,7 +12,7 @@ contains 3 tables:
 
 --    Before starting with the questions, feel free to take your time,
 --    exploring the data, and getting acquainted with the 3 tables. Open db browser
---    lite, File --> Open Databasr -->sql\sqlDB\sqlite_db_pythonsqlite.db
+--    lite, File --> Open Database -->sql\sqlDB\sqlite_db_pythonsqlite.db
 
 
 /* QUESTIONS 
