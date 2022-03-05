@@ -1,4 +1,4 @@
-The db file --> ql\sqlDB\sqlite_db_pythonsqlite.db, has the "country_club" database. This database
+The db file --> sql\sqlDB\sqlite_db_pythonsqlite.db, has the "country_club" database. This database
 contains 3 tables:
 1. the "Bookings" table,
 2. the "Facilities" table, and
