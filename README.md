@@ -10,6 +10,7 @@
 # window functions
 - https://drill.apache.org/docs/sql-window-functions-introduction/
 - https://www.windowfunctions.com/
+- https://www.windowfunctions.com/questions/over/
 - https://docs.aws.amazon.com/redshift/latest/dg/c_Window_functions.html
 - https://medium.com/@rohitgupta_82488/resources-to-master-sql-984447e462ca 
 
