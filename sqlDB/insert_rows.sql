@@ -4093,3 +4093,15 @@ INSERT INTO "main"."Members" ("memid", "surname", "firstname", "address", "zipco
 INSERT INTO "main"."Members" ("memid", "surname", "firstname", "address", "zipcode", "telephone", "recommendedby", "joindate") VALUES ('35', 'Hunt', 'John', '5 Bullington Lane, Boston', '54333', '(899) 720-6978', '30', '2012-09-19 11:32:45');
 INSERT INTO "main"."Members" ("memid", "surname", "firstname", "address", "zipcode", "telephone", "recommendedby", "joindate") VALUES ('36', 'Crumpet', 'Erica', 'Crimson Road, North Reading', '75655', '(811) 732-4816', '2', '2012-09-22 08:36:38');
 INSERT INTO "main"."Members" ("memid", "surname", "firstname", "address", "zipcode", "telephone", "recommendedby", "joindate") VALUES ('37', 'Smith', 'Darren', '3 Funktown, Denzington, Boston', '66796', '(822) 577-3541', '', '2012-09-26 18:08:45');
+
+
+--
+-- Table structure for table `Runners`
+--
+INSERT INTO "main"."Runners" ("id", "name", "weight", "country") VALUES ('0', 'Andy', '50.0', 'UK');
+INSERT INTO "main"."Runners" ("id", "name", "weight", "country") VALUES ('1', 'Bob', '100.0', 'UK');
+
+INSERT INTO "main"."Runners" ("id", "name", "weight", "country") VALUES ('2', 'Cedric', '50.0', 'France');
+INSERT INTO "main"."Runners" ("id", "name", "weight", "country") VALUES ('3', 'Eric', '70.0', 'France');
+
+INSERT INTO "main"."Runners" ("id", "name", "weight", "country") VALUES ('4', 'Dave', '70.0', 'Germany');

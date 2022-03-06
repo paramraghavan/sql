@@ -221,3 +221,56 @@ group by facid)
 where totalrevenue < 1000
 
 
+--
+-- Windows Function
+--
+
+-- Consider a query where we wanted to find the average weight of the runners grouped by country. This can be done like this:
+
+select
+country,
+avg(weight)
+from runners group by country;
+
+
+
+-- when over is empty, average weight for all the rows is computed
+select
+name, weight,
+avg(weight) over () as 'overall average weight'
+from runners order by name
+
+
+-- Here average_weight is recomputed on each 'step' of the SQL output
+select
+name, weight,
+avg(weight) over (order by name) as 'Here we have average weight recomputed each step'
+from runners order by name
+--limit 10
+
+--OR --
+select
+name, weight,
+avg(weight) over (order by name) as 'Here we have average weight recomputed each step'
+from runners
+-------------------------------------------------------------------------------------------
+
+--
+-- Partition by.
+-- Here avg_weight is recomputed on every 'step' of the SQL like above BUT it is reset when the partition by field changes.
+-- In this case we partition by country (think of it as grouping by country).
+--
+select
+name, weight, country,
+avg(weight) over (partition by country order by name)
+from runners order by name
+
+--
+-- Partition by with no order by name
+-- Here avg_weight is computed at country level - for each partition by country and reset when the country changes
+-- In this case we partition by country (think of it as grouping by country).
+--
+select
+name, weight, country,
+avg(weight) over (partition by country)
+from runners order by name

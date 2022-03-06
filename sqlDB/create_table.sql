@@ -39,5 +39,16 @@ CREATE TABLE IF NOT EXISTS `Members` (
 );
 
 
+--
+-- Create table runners
+--
+CREATE TABLE IF NOT EXISTS `Runners` (
+  `id` int(4) NOT NULL DEFAULT '0',
+  `name` varchar(17) DEFAULT NULL,
+  `weight` decimal(3,1) DEFAULT NULL,
+  `country` varchar(17) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
 commit;
 
