@@ -36,7 +36,7 @@ select count(*) from Facilities where membercost = 0
 SELECT facid, name, membercost, monthlymaintenance, 
 monthlymaintenance*0.2 percentratio
 FROM Facilities
-WHERE membercost < (monthlymaintenance * 0.2)  
+WHERE membercost < (monthlymaintenance * 0.2)
 AND membercost <> 0
  
 --
@@ -97,7 +97,7 @@ ORDER BY membername
 --     Produce a list of bookings on the day of 2012-09-14 which
 --    will cost the member (or guest) more than $30. Remember that guests have
 --    different costs to members (the listed costs are per half-hour 'slot'), and
---    the guest user's ID is always 0. Include in your output the name of the
+--    the guest user's ID is always 0 or firstname ='GUEST'. Include in your output the name of the
 --    facility, the name of the member formatted as a single column, and the cost.
 --    Order by descending cost, and do not use any subqueries.
 --
@@ -170,18 +170,18 @@ group by facid)
 where totalrevenue < 1000
 
 /* OR */
-
-WITH fac_details AS(
-Select b.facid, b.memid, b.starttime, b.slots,  m.firstname, f.name as facility_name,
-CASE WHEN m.firstname = 'GUEST'
-THEN f.guestcost * b.slots
-ELSE f.membercost * b.slots
-END AS cost
-from
-Bookings b
-LEFT join Facilities f ON b.facid = f.facid
-LEFT join Members m ON m.memid = b.memid
-)
+--
+--WITH fac_details AS(
+--Select b.facid, b.memid, b.starttime, b.slots,  m.firstname, f.name as facility_name,
+--CASE WHEN m.firstname = 'GUEST'
+--THEN f.guestcost * b.slots
+--ELSE f.membercost * b.slots
+--END AS cost
+--from
+--Bookings b
+--LEFT join Facilities f ON b.facid = f.facid -- should not use left join only use inner join.
+--LEFT join Members m ON m.memid = b.memid
+--)
 
 select facility_name, sum(cost) as totalrevenue from fac_details
 group by facility_name having totalrevenue >1000
@@ -216,7 +216,7 @@ order by m1.surname, m1.firstname
 
 --
 --    Q13:
---    Find the facilities usage by month, but not guests facid, month , slots total
+--    Find the facilities usage by month, but not for guests facid, month , slots total
 --    EXTRACT and date_format
 --
   select name, month, usage
