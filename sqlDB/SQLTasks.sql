@@ -287,3 +287,11 @@ select
 name, weight,
 min(weight) over (order by name ROWS between 1 preceding and 1 following)
 from runners order by name
+
+
+--
+--    Row_number, Rank and Dense_rank
+--    Row_number -  gives a result that must always be unique. Each row is assigned a different value even if they are equalr
+--    Rank and dense_rank - The easiest way to explain rank and dense_rank is to imagine ranking the runners of a race.
+--     Consider: If 2 runners finish in equal 3rd, is the next runner's place 4th (dense_rank) or 5th (rank).
+--

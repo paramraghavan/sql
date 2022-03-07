@@ -4105,3 +4105,11 @@ INSERT INTO "main"."Runners" ("id", "name", "weight", "country") VALUES ('2', 'C
 INSERT INTO "main"."Runners" ("id", "name", "weight", "country") VALUES ('3', 'Eric', '70.0', 'France');
 
 INSERT INTO "main"."Runners" ("id", "name", "weight", "country") VALUES ('4', 'Dave', '70.0', 'Germany');
+
+ALTER TABLE "main"."Runners" ADD time int(5) DEFAULT NULL;
+
+UPDATE "main"."Runners" set time=101 where id =0;
+UPDATE "main"."Runners" set time=103 where id =1;
+UPDATE "main"."Runners" set time=104 where id =2;
+UPDATE "main"."Runners" set time=104 where id =3;
+UPDATE "main"."Runners" set time=108 where id =4;
