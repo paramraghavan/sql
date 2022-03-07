@@ -1,8 +1,11 @@
-The db file --> sql\sqlDB\sqlite_db_pythonsqlite.db, has the "country_club" database. This database
-contains 3 tables:
-1. the "Bookings" table,
-2. the "Facilities" table, and
-3. the "Members" table.
+------------------------------------------------------------------------------------------------------------------------
+--    The db file --> sql\sqlDB\sqlite_db_pythonsqlite.db, has the "country_club" database. This database
+--    contains 3 tables:
+--    1. the "Bookings" table,
+--    2. the "Facilities" table, and
+--    3. the "Members" table.
+--    4. the "Runner" table, used for windows function
+------------------------------------------------------------------------------------------------------------------------
 
 --
 --   If you ever want to create and upload data again, drop database and create a new database via DB Browser SQLite
