@@ -150,6 +150,7 @@ the join.
 
 **NOTE:** ANSI SQL92 - supports both RIGHT AND FULL OUTER JOIN, it is jsut that the SQLite has not implemneted these
 
+
 # Resources:
 - [basic sql](https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)
 - [sql explained in venn diagram](https://stackoverflow.com/questions/13997365/sql-joins-as-venn-diagram)    
