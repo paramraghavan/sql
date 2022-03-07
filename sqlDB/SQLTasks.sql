@@ -295,3 +295,34 @@ from runners order by name
 --    Rank and dense_rank - The easiest way to explain rank and dense_rank is to imagine ranking the runners of a race.
 --     Consider: If 2 runners finish in equal 3rd, is the next runner's place 4th (dense_rank) or 5th (rank).
 --
+select name, time,
+row_number() over (order by time),
+rank() over (order by time),
+dense_rank() over (order by time)
+FROM runners order by time
+
+--
+--    Cume_dist & Percent_rank
+--    percent_rank returns a number from 1 to 0. The highest being 1 and the lowest 0.
+--    cume_dist will return a number from 1 towards 0 but never 0.
+--    Think of it this way:
+--      If there are 4 different values do you count down from 1 in steps of 0.25 (percent_rank)
+--      or in steps of 0.2 ensuring that we never hit 0 (cume_dist)
+--
+
+select name, time,
+percent_rank() over (order by time),
+cume_dist() over (order by time)
+FROM runners order by time
+
+--
+--    Lead and Lag
+--    These functions allow you to examine the next or previous row with respect to the current row
+--    Consider a race where we wanted to see the time of the person in front of us and the amount of time we beat the person behind us by
+--
+
+select name, time,
+lag(time, 1) over (order by time) as time_of_person_infront_of_me,
+lead(time, 1) over (order by time) as time_of_person_behind_me,
+lead(time, 1) over (order by time) - time as how_much_i_was_infront_of_ther_person_behind_me
+FROM runners order by time
