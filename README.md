@@ -4,7 +4,7 @@
 
 ![img_1.png](img_1.png)
   
-- [see sql tutorial](./sqlDB/SQLTasks.sql)
+- [see sql tutorial](sqlDB/sql-step-by-step.sql)
 
 
 # window functions
