@@ -7,7 +7,12 @@
 - [see sql tutorial](sqlDB/sql-step-by-step.sql)
 
 
-# window functions
+# Resources
+# sql
+- springboard
+- [basic sql](https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)
+
+## window functions
 - https://drill.apache.org/docs/sql-window-functions-introduction/
 - https://www.windowfunctions.com/
 - https://www.windowfunctions.com/questions/over/
