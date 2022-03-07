@@ -24,11 +24,8 @@ Before starting this section explore the all tables in the database.
 - For analytical section use **analytical\sqlite_db_pythonsqlite.db**
 Before starting with the questions, take your time to explore the all the above 4 tables and get acquainted with them.
 Open db browserlite, File --> Open Database -->analytical\sqlite_db_pythonsqlite.db
-The db file --> sql\sqlDB\sqlite_db_pythonsqlite.db, is a database file, it contains 4 tables:
-1. the "Bookings" table,
-2. the "Facilities" table, and
-3. the "Members" table.
-4. the "Runner" table, used for windows function
+The db file --> sql\sqlDB\sqlite_db_pythonsqlite.db, is a database file, it contains 4 tables 
+and the "Runners" table is used for exploring windows function.
 
 >If you ever want to create and upload data again, drop database and create a new database via DB Browser SQLite
 >> analytical/create_table.sql
