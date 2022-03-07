@@ -16,7 +16,8 @@
 - For joins section  uses database joins/basicsqlite.db
 Before starting this section explore the above database.
 >If you ever want to create and upload data again, drop database and create a new database via DB Browser SQLite
->> joins/create_tables_ddl.sql
+>> joins/create_tables_ddl.sql 
+> 
 >> joins/insert_sql_dml.sql
 
  
@@ -30,8 +31,9 @@ The db file --> sql\sqlDB\sqlite_db_pythonsqlite.db, is a database file, it cont
 4. the "Runner" table, used for windows function
 
 >If you ever want to create and upload data again, drop database and create a new database via DB Browser SQLite
->> github\sql\sqlDB\create_table.sql
->> github\sql\sqlDB\insert_rows.sql
+>> analytical/create_table.sql
+> 
+>> analytical/insert_rows.sql
 
 
 # Tools
