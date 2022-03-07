@@ -13,20 +13,19 @@
 --   - github\sql\sqlDB\insert_rows.sql
 --
 
---    Before starting with the questions, feel free to take your time,
---    exploring the data, and getting acquainted with the 3 tables. Open db browser
---    lite, File --> Open Database -->sql\sqlDB\sqlite_db_pythonsqlite.db
+--    Before starting with the questions, take your time to explore the all the above 4 tables and get acquainted with them.
+--    Open db browserlite, File --> Open Database -->sql\sqlDB\sqlite_db_pythonsqlite.db
 
+--
 --    Q1
 --    Some of the facilities charge a fee to members, but some do not.
 --    Write a SQL query to produce a list of the names of the facilities that do.
-
+--
 select name from Facilities where membercost <> 0;
 
 --
 --    Q2: How many facilities do not charge a fee to members?
 --
-
 select count(*) from Facilities where membercost = 0
 
 --
