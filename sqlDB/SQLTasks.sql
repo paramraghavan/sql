@@ -257,7 +257,7 @@ from runners
 
 --
 -- Partition by.
--- Here avg_weight is recomputed on every 'step' of the SQL like above BUT it is reset when the partition by field changes.
+-- Here avg_weight is recomputed on every 'step' of the SQL like above and it is reset when the partition by field changes.
 -- In this case we partition by country (think of it as grouping by country).
 --
 select
@@ -267,10 +267,23 @@ from runners order by name
 
 --
 -- Partition by with no order by name
--- Here avg_weight is computed at country level - for each partition by country and reset when the country changes
+-- Here avg_weight is computed by partition - by country and reset when the country changes
 -- In this case we partition by country (think of it as grouping by country).
 --
 select
 name, weight, country,
 avg(weight) over (partition by country)
+from runners order by name
+
+--    Preceding and Following allow us to perform aggregate functions on the rows just before and after the current row.
+--    Here we will list the weight and the minimum weight of each runner and their neighbours just before and after them.
+--    min(andy) = min(50, 100)
+--    min(bob) = min(50, 100, 50)
+--    min(cedric) = min(100, 50, 70)
+--    min(dave) = min(50, 70, 70)
+--    min(eric) = min(70, 70)
+
+select
+name, weight,
+min(weight) over (order by name ROWS between 1 preceding and 1 following)
 from runners order by name
