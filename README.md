@@ -3,12 +3,35 @@
 - [sql - joins](joins/README.md)
 - [sql - analytical](analytical/sql-step-by-step.sql)
 
+
 # Install steps
 - please install sqllite browser- see tools section below
 - Screen capture of sqlitebrowser, see below: 
 
 ![img_1.png](img_1.png)
 
+
+# Familiarize
+
+- For joins section  uses database joins/basicsqlite.db
+Before starting this section explore the above database.
+>If you ever want to create and upload data again, drop database and create a new database via DB Browser SQLite
+>> joins/create_tables_ddl.sql
+>> joins/insert_sql_dml.sql
+
+ 
+- For analytical section points to analytical\sqlite_db_pythonsqlite.db
+Before starting with the questions, take your time to explore the all the above 4 tables and get acquainted with them.
+Open db browserlite, File --> Open Database -->analytical\sqlite_db_pythonsqlite.db
+The db file --> sql\sqlDB\sqlite_db_pythonsqlite.db, is a database file, it contains 4 tables:
+1. the "Bookings" table,
+2. the "Facilities" table, and
+3. the "Members" table.
+4. the "Runner" table, used for windows function
+
+>If you ever want to create and upload data again, drop database and create a new database via DB Browser SQLite
+>> github\sql\sqlDB\create_table.sql
+>> github\sql\sqlDB\insert_rows.sql
 
 
 # Tools
