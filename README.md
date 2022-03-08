@@ -22,7 +22,7 @@
 
 # Familiarize
 
-- For joins section use database **joins/basicsqlite.db**
+- For joins section use database **joins/joins.db**
 Before starting this section explore the all tables in the database.
 >If you ever want to create and upload data again, drop database and create a new database via DB Browser SQLite
 >> joins/create_tables_ddl.sql 
@@ -30,7 +30,7 @@ Before starting this section explore the all tables in the database.
 >> joins/insert_sql_dml.sql
 
  
-- For analytical section use **analytical\sqlite_db_pythonsqlite.db**
+- For analytical section use **analytical\analytical.db**
 Before starting with the questions, take your time to explore the all the above 4 tables and get acquainted with them.
 Open db browserlite, File --> Open Database -->analytical\sqlite_db_pythonsqlite.db
 The db file --> sql\sqlDB\sqlite_db_pythonsqlite.db, is a database file, it contains 4 tables 
