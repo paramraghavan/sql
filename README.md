@@ -1,7 +1,7 @@
 # SQL
 
 - [sql - joins](joins/README.md)
-- [sql - analytical](analytical/sql-step-by-step.sql)
+- [sql - analytical](analytical/README.sql)
 
 
 # Install steps
