@@ -1,7 +1,7 @@
 # SQL
 
 - [sql - joins](joins/README.md) - inner joins,  left, right, full outer joins 
-- [sql - analytical](analytical/README.sql) - min, mac, average, case, windows functions
+- [sql - analytical](analytical/README.sql) - min, max, average, case, windows functions
 
 
 # Install steps
