@@ -5,7 +5,7 @@
 
 
 # Install steps
-- please install sqllite browser- see tools section below
+- please install sqllite browser- [download here](https://sqlitebrowser.org/dl/)
 - Screen capture of sqlitebrowser, see below: 
 
 ![img_1.png](img_1.png)
@@ -41,12 +41,6 @@ and the "Runners" table is used for exploring windows function.
 > 
 >> analytical/insert_rows.sql
 
-
-# Tools
-- https://sqlitebrowser.org/
-- https://download.sqlitebrowser.org/DB.Browser.for.SQLite-3.12.2-win64.msi
-
-
 # Resources
 - springboard
 - [basic sql](https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)
@@ -61,3 +55,8 @@ and the "Runners" table is used for exploring windows function.
 - https://www.windowfunctions.com/questions/over/
 - https://docs.aws.amazon.com/redshift/latest/dg/c_Window_functions.html
 - https://medium.com/@rohitgupta_82488/resources-to-master-sql-984447e462ca 
+
+# Tools
+- https://sqlitebrowser.org/
+- https://download.sqlitebrowser.org/DB.Browser.for.SQLite-3.12.2-win64.msi
+
