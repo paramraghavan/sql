@@ -1,7 +1,7 @@
 # SQL
 
-- [sql - joins](joins/README.md)
-- [sql - analytical](analytical/README.sql)
+- [sql - joins](joins/README.md) - inner joins,  left, right, full outer joins 
+- [sql - analytical](analytical/README.sql) - min, mac, average, case, windows functions
 
 
 # Install steps
@@ -41,7 +41,8 @@ and the "Runners" table is used for exploring windows function.
 > 
 >> analytical/insert_rows.sql
 
-# Resources
+Resources
+--------------------
 - springboard
 - [basic sql](https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)
 - [sql explained in venn diagram](https://stackoverflow.com/questions/13997365/sql-joins-as-venn-diagram)    
@@ -49,14 +50,14 @@ and the "Runners" table is used for exploring windows function.
 - https://docs.oracle.com/database/121/SQLRF/ap_standard_sql001.htm#SQLRF55514
 - https://docs.actian.com/vector/4.2/index.html#page/SQLLang/ANSI_2fISO_Join_Syntax.htm
 
-## window functions
-- https://drill.apache.org/docs/sql-window-functions-introduction/
-- https://www.windowfunctions.com/
-- https://www.windowfunctions.com/questions/over/
-- https://docs.aws.amazon.com/redshift/latest/dg/c_Window_functions.html
-- https://medium.com/@rohitgupta_82488/resources-to-master-sql-984447e462ca 
+- **Window functions**
+    - https://drill.apache.org/docs/sql-window-functions-introduction/
+    - https://www.windowfunctions.com/
+    - https://www.windowfunctions.com/questions/over/
+    - https://docs.aws.amazon.com/redshift/latest/dg/c_Window_functions.html
+    - https://medium.com/@rohitgupta_82488/resources-to-master-sql-984447e462ca 
 
-# Tools
-- https://sqlitebrowser.org/
-- https://download.sqlitebrowser.org/DB.Browser.for.SQLite-3.12.2-win64.msi
+- **Tools**
+    - https://sqlitebrowser.org/
+    - https://download.sqlitebrowser.org/DB.Browser.for.SQLite-3.12.2-win64.msi
 
