@@ -10,6 +10,15 @@
 
 ![img_1.png](img_1.png)
 
+- See below, selecting database file for **executing joins sql** section
+
+![image](https://user-images.githubusercontent.com/52529498/157238628-975be009-f725-47d9-a2d7-949c94abc869.png)
+
+- See below, selecting database file for **executing analytical sql** section
+
+![image](https://user-images.githubusercontent.com/52529498/157238501-6b23ee29-e5bd-40ad-97a5-33210c8dbedf.png)
+
+
 
 # Familiarize
 
