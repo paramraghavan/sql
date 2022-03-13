@@ -1,0 +1,41 @@
+Analytic functions - use keyword OVER
+partition by is same as group by, but within that partition
+
+select a.*, count(*) over (partition by a.gender) as gender_counts
+from childstat a
+
+above adds a new column gender_counts
+select a.*, sum(a.weight) over (partition by a.gender) as wt_run,
+count(*) over (partition by a.gender) as gender_counts
+from childstat a
+
+select a.*, count(*) over (partition by a.gender , extract(year from a.birthdate)) as target
+from childstat a (first partition by gender, then by year)
+
+ORDER BY
+This is used only on row_number(), lead(), lag() etc
+NOT used for Count(), Min(), Max(0 etc
+'partition by' is not needed, if whole table needs to be ordered.
+select a.*, sum(a.weight) over (partition by a.gender order by a.weight) as wt_run
+from childstat a
+OR
+select a.*, sum(a.weight) over (order by a.weight) as wt_run
+from childstat a
+
+ROW_NUMBER() - ever increasing integer value
+listagg() - raw data as a delimited text string
+lead()/Lag() - peek forward and look back.
+first_value()/last_value()/nth_value()
+
+
+
+RATIO_TO_REPORT
+creates ratio - column value/total value for that partition.
+Multiply by 100 to get its percent.*When you add all the values for that partition, it totals to 100).
+
+
+Examples
+select a.*, listagg(a.firstname, ',')
+within group (order by a.weight desc)
+over (partition by a.gender) as namelist
+from childstat a

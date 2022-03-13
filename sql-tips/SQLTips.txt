@@ -1,0 +1,129 @@
+intersect vs of inner join - The INNER JOIN will return duplicates, if id is duplicated in either table. INTERSECT removes duplicates. The INNER JOIN will never return NULL, but INTERSECT will return NULL.
+
+Replace subquery with inner join
+If inner query is smaller than outer query use IN
+If inner query is larger than outer query use EXISTS
+Outer query ( inner query)
+
+Replace and/or with IN for multi-columns
+where (name, city) in (('name1','city1'), ('name1','city1'))
+
+
+Use With for repeated sub queries
+
+Use /*+ APPEND */ for inserts to reduce time
+
+Order listing table on From clause with increasing number of rows.
+(not total number of rows in table, but number of rows from the subquery.)
+
+Avoid cartesan products if possible. Use modern join instead like inner join, outer join.
+
+INDEXES
+
+These are useful in
+order by, count(*), group by, joins, constraints
+
+Index will be used by Oracle when only less than 15% of the table is returned.Oracle will ignore index if more than 15%.
+Index makes changes to tables like insert, update, delete slow.
+If the computer has good speed(RPM). full table scans will be faster than using indexes.
+
+b-tree index saves rowid's. This is used primarily for columns in where clause when using 
+quality and range conditions.
+This is not used when not equal or is not is used(ie used to check if data is there and not when data is not there)
+Can be simple or composite. Null value columns CANNOT be part of btree indexes.
+If a functions is used with this column then index is not used. For that use function based index.
+
+bitmap index saves in o's and 1's.
+It is used if number of distinct rows is much lesser than total rows for that column.
+Used in datawarehousing or environments where queries reference many columns in an ad hoc fasion.
+Not good for online transactions or OLTP as they tend to change very frequently
+Can be simple or composite. Null value columns can be part of bitmap indexes(is null in where clause), but not fo b-tree index.
+
+Function index can be created if that function is used at many places.
+example, upper(candybar_name),
+where 100*(taste_rating/overall_rating) <=10
+
+Index-organixed table - storing index and its row in the same table.
+Similar to b-tree index, instead of row-id, row data itself is stored here.Must have a primary key.
+Used in Dimension and hierarchial tables.Create table end with key word 'Organization index'.
+'Including columnname overflow' can be used to mark the columns that are indexed as part of Index oraganized table.
+
+Bitmap join indexes is simlar to bitmap index. But here we join tables along with its columns 
+which are used in where clause.Generally between fact and dimension tables. We prejoin tables so it 
+reduces sql runtime.One of the table column must be primary key.
+
+Local partitioned index is index created within the partition. Use keyword 'LOCAL'
+				Used In datawarehouses. Mostly used index.
+
+Global non-partitioned index is index created across all partitions.Same index as if the table is not partitioned.
+				Used in OLTP.
+
+Global Partioned index - index using different partition scheme.- index created by its own 				
+partitioning schema independent of paritioning scheme used by its underlying table.
+				Used in OLTP.
+
+Use parallel to reduce index creation time.
+If composite index ABC is already there, we dont need separate indexes on any of those columns like A or AB as
+they are leading columns.
+Safer to order them in increasing order of number of distinct values. Smallest is the first.
+
+
+Gather statistics on indexes. Else creating indexes is waste. Use DBMS_STATS (
+1. Procedures gather_schema_stats or gather_table_stats
+2. User auto_spin_size for estimate_percent
+3. all caps 
+4. degree says if needed in parallel
+5. cascade if needed for all columns set to true by default) for this. 
+Dont use older Analyze command for this. Oracle automatically gathers statistics for older than 10g only if there are
+many change in the column.
+
+
+Good tables all_ or user_
+_tables
+_tab_columns
+_indexes
+_ind_cloumns (also has column_position)
+statistics are stored in _tab_statistics/_tab_col_statistics/_ind_statistics. (we may not use them)
+
+_tab_paritions
+_tab_subparitions ( used for composite partitions) (Check if index is usable. If unusable alter using 'rebuild partition')
+_ind_partitions
+
+
+
+To check if Oracle is using index use Autotrace(executes query) or Explain plan(does not execute query).
+Autotrace
+
+SET AUTOTRACE ON EXPLAIN
+run the query
+SET AUTOTRACE OFF
+
+explain plan (multi-step process)
+EXPLAIN PLAN SET STATEMENT_ID='TEST1' FOR
+run the query
+
+select the query from plan table using LPAD and start with ID=0 etc
+
+
+Partition
+
+Simple partitions - like Range, list or hash
+composite partitions - has sub partitions like Range-List, List-List  etc. Use key word
+'subparition by list(column name)
+subpartition template ('.
+
+We can also override subpartition template for few values.
+
+
+Understanding
+Joins
+https://stackoverflow.com/questions/5706437/whats-the-difference-between-inner-join-left-join-right-join-and-full-join
+
+Normalization
+1st - every row in a table ahs to be unique
+
+2nd- single column primary key 
+
+3rd - no column must be dependent on the non-primary key in the same table. 
+If so, remove that columns and add a separate table where it depends on the primary key.
+

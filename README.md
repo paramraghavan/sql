@@ -41,6 +41,10 @@ and the "Runners" table is used for exploring windows function.
 > 
 >> analytical/insert_rows.sql
 
+
+# How to Create Local Database Server 
+- [Steps to create local database server instance via docker container](./setup-postgresql.md)
+
 Resources
 --------------------
 - springboard
