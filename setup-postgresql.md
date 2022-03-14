@@ -17,12 +17,11 @@ A `docker-compose.yml` file has been provided. To startup the containerized loca
 
 > **What is docker compose**
 >> Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file
-> to configure your application’s services. Then, with a single command, you create and start all the services from your configuration 
+> to configure your application’s services. Then, with a single command, you create and start all the services
+> from your configuration 
 
-> Using sql driver psycopg2 and pymongo
+> Using sql driver psycopg2
 >> pip install psycopg2
-> 
->>  pip install pymongo
 
 - cd ./postgresql
 
