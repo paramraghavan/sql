@@ -24,7 +24,7 @@ at work or school and would like to learn more.
 # Install step 2 - option 2
 - this gives you the full flavour of a real RBMS.
 - This is using docker to deploy postgresql in a docker container
-- [Here are the steps](setup-postgresql.md)
+- [Steps to create local database server instance using docker container](./setup-postgresql.md)
 - Screen capture:
 ![img_3.png](img_3.png)
 
@@ -49,9 +49,6 @@ and the "Runners" table is used for exploring windows function.
 > 
 >> analytical/insert_rows.sql
 
-
-# How to Create Local Database Server 
-- [Steps to create local database server instance via docker container](./setup-postgresql.md)
 
 Resources
 --------------------
