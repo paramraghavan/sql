@@ -3,6 +3,7 @@ version: '3.1'
 services:
   postgres:
     image: postgres:latest
+    container_name: learn-sql-postgresql
     environment:
       - POSTGRES_PASSWORD=testdb
       - POSTGRES_USER=testdb
@@ -11,7 +12,17 @@ services:
       - 5432:5432
     volumes:
       - ./config_pg/init.sql:/docker-entrypoint-initdb.d/init.sql
-      - ./config_pg/students.csv:/tmp/students.csv
+      - ./config_pg/bookings.csv:/tmp/bookings.csv
+      - ./config_pg/categories.csv:/tmp/categories.csv
+      - ./config_pg/customers.csv:/tmp/customers.csv
+      - ./config_pg/departments.csv:/tmp/departments.csv
+      - ./config_pg/employees.csv:/tmp/employees.csv
+      - ./config_pg/facilities.csv:/tmp/facilities.csv
+      - ./config_pg/members.csv:/tmp/members.csv
+      - ./config_pg/orders.csv:/tmp/orders.csv
+      - ./config_pg/products.csv:/tmp/products.csv
+      - ./config_pg/runners.csv:/tmp/runners.csv
+      - ./config_pg/suppliers.csv:/tmp/suppliers.csv
 
   admin:
     image: adminer:latest
