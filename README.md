@@ -1,10 +1,13 @@
 # SQL
+This will be useful for all who have a basic undestanding  of sql or have dabbled with it
+at work or school and would like to learn more.
 
 - [sql - joins](joins/README.md) - inner joins,  left, right, full outer joins 
 - [sql - analytical](analytical/README.sql) - min, max, average, case, windows functions
 
 
-# Install steps
+# Install steps 1 - option 1
+- this will be an easier option
 - please install sqllite browser- [download here](https://sqlitebrowser.org/dl/)
 - Screen capture of sqlitebrowser, see below: 
 
@@ -18,7 +21,12 @@
 
 ![image](https://user-images.githubusercontent.com/52529498/157238501-6b23ee29-e5bd-40ad-97a5-33210c8dbedf.png)
 
-
+# Install step 2 - option 2
+- this gives you the full flavour of a real RBMS.
+- This is using docker to deploy postgresql in a docker container
+- [Here are the steps](setup-postgresql.md)
+- Screen capture:
+![img_3.png](img_3.png)
 
 # Familiarize
 
