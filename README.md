@@ -1,5 +1,5 @@
 # SQL
-This will be useful for all who have a basic undestanding  of sql or have dabbled with it
+This will be useful for all who have a basic understanding  of sql or have dabbled with it
 at work or school and would like to learn more.
 
 - [sql - joins](joins/README.md) - inner joins,  left, right, full outer joins 
