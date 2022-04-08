@@ -49,6 +49,8 @@ and the "Runners" table is used for exploring windows function.
 > 
 >> analytical/insert_rows.sql
 
+# [Visualize Joins Another Way](joins/VisualizeJoinsAnotherWay.md)
+
 
 Resources
 --------------------
