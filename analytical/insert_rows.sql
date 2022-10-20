@@ -4113,3 +4113,19 @@ UPDATE "main"."Runners" set time=103 where id =1;
 UPDATE "main"."Runners" set time=104 where id =2;
 UPDATE "main"."Runners" set time=104 where id =3;
 UPDATE "main"."Runners" set time=108 where id =4;
+
+--
+--  Add rows for table cats
+--
+INSERT INTO "main"."cats" ("id", "name", "breed", "weight","color","age") VALUES (1,"Ashes"	 , "Persian",	4.5 ,"Black",	5);
+INSERT INTO "main"."cats" ("id", "name", "breed", "weight","color","age") VALUES (2,"Molly"	 , "Persian",	4.2	,"Black",	1);
+INSERT INTO "main"."cats" ("id", "name", "breed", "weight","color","age") VALUES (3,"Felix"	 , "Persian",	5.0	,"Tortoiseshell",	2);
+INSERT INTO "main"."cats" ("id", "name", "breed", "weight","color","age") VALUES (4,"Smudge"  , "British Shorthair",	4.9	,"Black",	4);
+INSERT INTO "main"."cats" ("id", "name", "breed", "weight","color","age") VALUES (5,"Tigger"  , "British Shorthair",	3.8	,"Tortoiseshell",	2);
+INSERT INTO "main"."cats" ("id", "name", "breed", "weight","color","age") VALUES (6,"Alfie"	 , "Siamese",	5.5 ,"Brown",	5);
+INSERT INTO "main"."cats" ("id", "name", "breed", "weight","color","age") VALUES (7,"Oscar"	 , "Siamese",	6.1 ,"Black",	1);
+INSERT INTO "main"."cats" ("id", "name", "breed", "weight","color","age") VALUES (8,"Millie"  , "Maine Coon", 5.4	,"Tortoiseshell",	5);
+INSERT INTO "main"."cats" ("id", "name", "breed", "weight","color","age") VALUES (9,"Misty"	 , "Maine Coon",	5.7	,"Brown",	2);
+INSERT INTO "main"."cats" ("id", "name", "breed", "weight","color","age") VALUES (10,"Puss"	 , "Maine Coon",	5.1	,"Tortoiseshell",	2);
+INSERT INTO "main"."cats" ("id", "name", "breed", "weight","color","age") VALUES (11,"Smokey" , "Maine Coon",	6.1	,"Brown",	4);
+INSERT INTO "main"."cats" ("id", "name", "breed", "weight","color","age") VALUES (12,"Charlie" , "British Shorthair",	4.8	,"Black",	4);
