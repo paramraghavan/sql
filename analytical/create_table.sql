@@ -50,5 +50,18 @@ CREATE TABLE IF NOT EXISTS `Runners` (
   PRIMARY KEY (`id`)
 );
 
+--
+-- Create table cats
+--
+CREATE TABLE IF NOT EXISTS `cats` (
+  `id` int(4) NOT NULL DEFAULT '0',
+  `name` varchar(17) DEFAULT NULL,
+  `breed` varchar(17) DEFAULT NULL,
+  `weight` decimal(3,1) DEFAULT NULL,
+  `color` varchar(17) DEFAULT NULL,
+  `age` int(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+);
+
 commit;
 
