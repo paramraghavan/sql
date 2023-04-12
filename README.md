@@ -71,4 +71,5 @@ Resources
 - **Tools**
     - https://sqlitebrowser.org/
     - https://download.sqlitebrowser.org/DB.Browser.for.SQLite-3.12.2-win64.msi
+    - [Sqllite Studio also seems to be a good option](https://sqlitestudio.pl/)
 
