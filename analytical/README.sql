@@ -102,6 +102,14 @@ ELSE membercost * slots >30
 END
 ORDER BY cost DESC
 
+-- above canbe repalced with
+-- CASE WHEN m.firstname = 'GUEST'
+-- THEN guestcost * slots
+-- ELSE membercost * slots
+-- END AS cost 
+-- if(m.firstname = 'GUEST',guestcost * slots,membercost * slots) as cost
+ 
+
 --
 --    Q9:
 --    This time, produce the same result as in Q8, but using a subquery.
