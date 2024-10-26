@@ -16,7 +16,7 @@ Use /*+ APPEND */ for inserts to reduce time
 Order listing table on From clause with increasing number of rows.
 (not total number of rows in table, but number of rows from the subquery.)
 
-Avoid cartesan products if possible. Use modern join instead like inner join, outer join.
+Avoid cartesan products if possible. Use  join instead like inner join, outer join.
 
 INDEXES
 
@@ -28,7 +28,7 @@ Index makes changes to tables like insert, update, delete slow.
 If the computer has good speed(RPM). full table scans will be faster than using indexes.
 
 b-tree index saves rowid's. This is used primarily for columns in where clause when using 
-quality and range conditions.
+equality and range conditions.
 This is not used when not equal or is not is used(ie used to check if data is there and not when data is not there)
 Can be simple or composite. Null value columns CANNOT be part of btree indexes.
 If a functions is used with this column then index is not used. For that use function based index.
