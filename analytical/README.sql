@@ -313,7 +313,8 @@ from runners order by name
 --    Row_number -  gives a result that must always be unique. Each row is assigned a different value even if they are equalr
 --    Rank and dense_rank - The easiest way to explain rank and dense_rank is to imagine ranking the runners of a race.
 --     Consider: If 2 runners finish in equal 3rd, is the next runner's place 4th (dense_rank) or 5th (rank).
---
+--     RANK: Creates gaps in sequence numbers when there are ties (1,2,3,3,5)
+--     DENSE_RANK: No gaps, continues with next sequential number (1,2,3,3,4)
 select name, time,
 row_number() over (order by time),
 rank() over (order by time),
