@@ -134,23 +134,21 @@ ORDER BY customer_id
 </pre>
 
 - Cartesian Products
-If two tables in a join query have no join condition, then Oracle Database returns their Cartesian product. Oracle 
+If two tables in a join query have no join condition, then database returns their Cartesian product. It 
 combines each row of one table with each row of the other. A Cartesian product always generates many rows and is 
 rarely useful. For example, the Cartesian product of two tables, each with 100 rows, has 10,000 rows. Always include 
 a join condition unless you specifically need a Cartesian product. If a query joins three or more tables and you do 
 not specify a join condition for a specific pair, then the optimizer may choose a join order that avoids producing 
 an intermediate Cartesian product.
 
-
 - Equijoins
 An equijoin is a join with a join condition containing an equality operator. An equijoin combines rows that have 
 equivalent values for the specified columns. Depending on the internal algorithm the optimizer chooses to execute 
 the join.
   
-
   
 
-**NOTE:** ANSI SQL92 - supports both RIGHT AND FULL OUTER JOIN, it is jsut that the SQLite has not implemneted these
+**NOTE:** ANSI SQL92 - supports both RIGHT AND FULL OUTER JOIN, it is just that the SQLite has not implemented these
 
 
 # Resources:
