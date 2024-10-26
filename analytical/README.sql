@@ -71,8 +71,8 @@ order by joindate desc limit 1
 --
 SELECT DISTINCT f.name courtname, CONCAT( firstname, ' ', surname ) membername
 FROM Bookings b
-LEFT JOIN Members m ON b.memid = m.memid
-LEFT JOIN Facilities f ON b.facid = f.facid
+JOIN Members m ON b.memid = m.memid
+JOIN Facilities f ON b.facid = f.facid
 WHERE f.name LIKE 'Tennis Court%'
 ORDER BY membername
 
