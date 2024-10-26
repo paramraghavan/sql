@@ -321,6 +321,19 @@ rank() over (order by time),
 dense_rank() over (order by time)
 FROM runners order by time
 
+
+--  Within Country (PARTITION BY country):
+--  Both functions work the same way when there's only one tie (France)
+--  Both give rank 1 to the first runner in each country
+SELECT
+    name,
+    country,
+    time,
+    DENSE_RANK() OVER (ORDER BY time) as dense_rank_time,
+    DENSE_RANK() OVER (PARTITION BY country ORDER BY time) as dense_rank_by_country
+FROM runners
+ORDER BY time;
+
 --
 --    Cume_dist & Percent_rank
 --    percent_rank returns a number from 1 to 0. The highest being 1 and the lowest 0.
