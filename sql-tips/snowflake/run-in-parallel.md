@@ -234,4 +234,3 @@ To choose the best method:
 2. If exact equal sizes are needed: Use ROW_NUMBER
 3. If random distribution is acceptable: Use HASH
 4. If percentage-based splitting is needed: Use NTILE
-

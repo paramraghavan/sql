@@ -61,10 +61,10 @@ ADD SEARCH OPTIMIZATION;
 ```
 
 ## Data Distribution and Update patterns
-
 Let me explain how data distribution and update patterns affect Snowflake clustering effectiveness.
 
 Data Distribution:
+@see [cardinality_check.md](cardinality_check.md)
 
 1. Cardinality Impact
 
