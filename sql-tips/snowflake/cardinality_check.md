@@ -44,9 +44,3 @@ active, inactive, active, active, inactive... (few unique values repeating)
 ↓ Poor for clustering alone
 ```
 
-Rule of Thumb:
-
-- High Cardinality: > 20% unique values (Good for clustering)
-- Medium Cardinality: 5-20% unique values (May be okay in combination)
-- Low Cardinality: < 5% unique values (Poor for clustering alone)
-
