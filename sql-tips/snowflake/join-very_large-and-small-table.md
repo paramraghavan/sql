@@ -1,4 +1,6 @@
-I'll show you the optimal approach to update a large table using a small lookup table in Snowflake. The key is to leverage proper indexing and merge statements while considering resource optimization.
+# update a large table using a small lookup table in Snowflake. 
+
+The key is to leverage proper indexing and merge statements while considering resource optimization.
 
 ```sql
 -- Method 1: Using MERGE statement (Most efficient for single-pass updates)
