@@ -1,5 +1,4 @@
 # Cardinality Check
-
 Higher number of unique values means higher cardinality!
 
 High Cardinality Example:
@@ -51,5 +50,3 @@ Low Cardinality (Status):
 active, inactive, active, active, inactive... (few unique values repeating)
 ↓ Poor for clustering alone
 ```
-
-Would you like me to help analyze the cardinality of specific columns in your table?
