@@ -33,20 +33,20 @@ FROM customers;
 -- cardinality_percentage: 0.0005%  (Low cardinality - poor for clustering)
 ```
 
+
+```
+High Cardinality (Customer ID):
+1001, 1002, 1003, 1004, 1005... (many unique values)
+Good for clustering
+
+Low Cardinality (Status):
+active, inactive, active, active, inactive... (few unique values repeating)
+↓ Poor for clustering alone
+```
+
 Rule of Thumb:
 
 - High Cardinality: > 20% unique values (Good for clustering)
 - Medium Cardinality: 5-20% unique values (May be okay in combination)
 - Low Cardinality: < 5% unique values (Poor for clustering alone)
 
-Visual Example:
-
-```
-High Cardinality (Customer ID):
-1001, 1002, 1003, 1004, 1005... (many unique values)
-↓ Good for clustering
-
-Low Cardinality (Status):
-active, inactive, active, active, inactive... (few unique values repeating)
-↓ Poor for clustering alone
-```

@@ -51,6 +51,28 @@ Remember that clustering effectiveness depends on:
 - Data distribution
 - Update patterns
 
+## Clustering depth is a metric that indicates how well the data in your table is clustered (organized) according to the clustering key. 
+* Clustering depth ranges from 1 to 8 (best to worst)
+* A depth of 1 means data is perfectly clustered
+* A depth of 8 means data is completely scattered
+* Values 2-7 indicate varying degrees of organization
+* Lower depth = Better pruning = Faster queries
+* Higher depth = More micro-partitions scanned = Slower queries
+
+**Best Practice**
+* Monitor clustering depth regularly
+* Recluster when depth consistently exceeds 4-5
+* Choose clustering keys based on common query filters
+* Consider automatic clustering for large tables
+
+```sql
+SELECT 
+    TABLE_NAME,
+    SYSTEM$CLUSTERING_DEPTH() as CLUSTERING_DEPTH,
+    SYSTEM$CLUSTERING_INFORMATION('your_clustering_key') as CLUSTERING_INFO
+FROM your_table;
+```
+
 ## Search Optimization Service
 
 This can help with selective queries but is primarily for search conditions rather than joins.
@@ -61,7 +83,7 @@ ADD SEARCH OPTIMIZATION;
 ```
 
 ## Data Distribution and Update patterns
-Let me explain how data distribution and update patterns affect Snowflake clustering effectiveness.
+how data distribution and update patterns affect Snowflake clustering effectiveness.
 
 Data Distribution:
 @see [cardinality_check.md](cardinality_check.md)

@@ -1,7 +1,9 @@
-Let me explain how MERGE works and its key differences from UPDATE with examples.
+# Merge vs Update 
+
+- Making sample tables to demonstrate
 
 ```sql
--- Let's create sample tables to demonstrate
+
 CREATE TABLE target_customers (
     customer_id INT,
     name STRING,

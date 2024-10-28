@@ -52,6 +52,23 @@ and the "Runners" table is used for exploring windows function.
 # [Visualize Joins Another Way](joins/VisualizeJoinsAnotherWay.md)
 
 
+# DDL vs DML
+**Data Definition Language**
+
+* DDL is used to specify a database’s structure, which includes its tables, views, indexes, and constraints.
+* DDL commands come in the following types: CREATE, ALTER, DROP, RENAME, and TRUNCATE.
+* DDL statements only modify the database’s schema; they have no direct effect on the data within the database.
+* DDL declarations are irreversible and difficult to undo.
+
+**Data Manipulation Language**
+
+* Inserting, updating, removing, and retrieving data from a database are all possible with DML.
+* DML commands come in the following types: SELECT, INSERT, UPDATE, DELETE, and MERGE.
+* DML statements have a direct impact on the database’s data.
+* In the event of an error, data can be recovered thanks to the reversibility of DML statements.
+>ref: https://www.geeksforgeeks.org/difference-between-ddl-and-dml-in-dbms/
+
+
 ## Sql Injection
 - https://www.stackhawk.com/blog/what-is-sql-injection/
 
