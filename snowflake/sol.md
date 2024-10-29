@@ -69,8 +69,9 @@ search_dt,
  from history;    
  
  
+ -- split the temp_table into multiple temp table
+ -- run udpates in separate thread and warehouse per temp_table
+ -- join these table back into original table.
+ 
+ 
 ```
-
-## PArallel Updates
-- use multiple warehouses and
-- split table into N temp table and combine
