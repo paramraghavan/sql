@@ -90,6 +90,35 @@ def query_s3_logs(database, table, request_param_value):
     return format_results('json')  # Change format type here if needed
 
 
+def list_all_tables(database_name, athena_client):
+    """
+    Boto3 athena - list all tables in given database
+    # Use the function
+    tables = list_all_tables('cloudtrail_analysis')
+    if tables:
+        print("Tables found:")
+        for table in tables:
+            print(f"- {table}")
+    """
+
+    tables = []
+    paginator = athena_client.get_paginator('list_table_metadata')
+
+    try:
+        for page in paginator.paginate(
+                CatalogName='AwsDataCatalog',
+                DatabaseName=database_name
+        ):
+            for table in page['TableMetadataList']:
+                tables.append(table['Name'])
+
+        return tables
+
+    except Exception as e:
+        print(f"Error: {str(e)}")
+        return None
+
+
 # Example usage
 if __name__ == "__main__":
     try:
@@ -132,35 +161,4 @@ The script:
 You can modify the format of the results by changing the format type in the `format_results()` call at the end of the
 function (options: 'json', 'csv', or 'string').
 
-
-```
-import boto3
-
-athena_client = boto3.client('athena')
-
-def list_all_tables(database_name):
-    tables = []
-    paginator = athena_client.get_paginator('list_table_metadata')
-    
-    try:
-        for page in paginator.paginate(
-            CatalogName='AwsDataCatalog',
-            DatabaseName=database_name
-        ):
-            for table in page['TableMetadataList']:
-                tables.append(table['Name'])
-                
-        return tables
-        
-    except Exception as e:
-        print(f"Error: {str(e)}")
-        return None
-
-# Use the function
-tables = list_all_tables('cloudtrail_analysis')
-if tables:
-    print("Tables found:")
-    for table in tables:
-        print(f"- {table}")
-```
 
