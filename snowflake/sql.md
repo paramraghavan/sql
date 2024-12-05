@@ -165,3 +165,70 @@ If you want to preserve existing data while adding new rows, use regular `INSERT
 INSERT INTO mytable 
 SELECT * FROM xyz;
 ```
+
+## MERGE - Update existing rows in `mytable` with matching rows from
+
+`xyz` while keeping non-matching rows and inserting new rows,
+
+You can use the MERGE statement. See below
+
+```sql
+MERGE INTO mytable t
+USING xyz s
+ON t.id = s.id  -- replace with your actual join key
+WHEN MATCHED THEN 
+    UPDATE SET 
+        column1 = s.column1,
+        column2 = s.column2
+        -- list all columns you want to update
+WHEN NOT MATCHED THEN
+    INSERT (column1, column2, ...)  -- list all columns
+    VALUES (s.column1, s.column2, ...);
+```
+
+This MERGE operation will:
+
+1. Update existing rows in `mytable` when there's a matching `id` in `xyz`
+2. Insert new rows from `xyz` when no matching `id` exists in `mytable`
+3. Leave unchanged any rows in `mytable` that don't have matching records in `xyz`
+
+For example, if your tables look like:
+
+```sql
+mytable:             xyz:
+id  name  value     id  name  value
+1   A     100       1   A     200    -- will update
+2   B     150       3   C     300    -- will insert
+4   D     400       -- this row stays unchanged
+```
+
+After the MERGE, `mytable` would contain:
+
+```sql
+id  name  value
+1   A     200    -- updated
+2   B     150    -- unchanged
+3   C     300    -- inserted
+4   D     400    -- unchanged
+```
+
+## Replace the entire column to updated
+
+Yes, you can update all columns in the matched rows during a MERGE. Instead of listing each column individually, you can
+use _"UPDATE SET *"_ to replace all columns:
+
+```sql
+MERGE INTO mytable t
+USING xyz s
+ON t.id = s.id  -- your join key
+WHEN MATCHED THEN 
+    UPDATE SET * -- replaces ALL columns with values from xyz
+WHEN NOT MATCHED THEN
+    INSERT (*) 
+    VALUES (s.*);
+```
+Above :
+1. Updates all columns from matching rows in `mytable` with values from `xyz`
+2. Inserts new rows from `xyz` that don't exist in `mytable`
+3. Preserves rows in `mytable` that don't have matches in `xyz`
+
